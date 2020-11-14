@@ -18,6 +18,7 @@ body {
  padding: 10px;
  background: rgba(0, 0, 0, .5);
  border-radius: 12px;
+ position: relative;
 }
 
 .container input,
@@ -113,11 +114,19 @@ img {
  color: #f5f5f5;
 }
 
-small {
- color: rgba(0, 0, 0, .5);
- display: block;
- font-style: italic;
- margin: .3rem;
+
+.footer{
  position: relative;
+ right: 0;
+}
+.footer small img {
+ width: 30px;
+}
+
+.footer small {
+ display: flex;
+ align-items: center;
+ font-style: italic;
+ margin: auto;
  font-size: 80%;
 }
