@@ -1,0 +1,82 @@
+* {
+ box-sizing: border-box !important;
+}
+
+.modal .modal-dialog .modal-content .modal-body form  {
+ padding: 3% 5%
+}
+
+
+
+.modal .modal-dialog .modal-content .modal-body form  div {
+ margin-bottom: 1.2rem;
+}
+
+.modal .modal-dialog .modal-content .modal-body form  div:last-child {
+ margin-bottom: .6rem;
+}
+
+.modal .modal-dialog .modal-content .modal-body form  div:first-child,
+button[type="submit"] {
+ margin-top: .6rem;
+}
+
+
+
+
+
+.modal .modal-dialog .modal-content .modal-body form  div label,
+.modal .modal-dialog .modal-content .modal-body form  div input {
+ border: transparent;
+ border-radius: 7px;
+ padding: .7rem;
+}
+
+.modal .modal-dialog .modal-content .modal-body form  div label {
+ padding: .2rem;
+
+}
+
+
+.modal .modal-dialog .modal-content .modal-body form  input,
+.modal .modal-dialog .modal-content .modal-body form  textarea,
+button[type="submit"] {
+ padding: .7rem;
+ border-radius: .2rem;
+ border: solid 1px #808080;
+ font-family: monospace;
+ background: #e6faff;
+ color: #101010;
+}
+
+.modal .modal-dialog .modal-content .modal-body form  div input {
+ width: 95%;
+}
+.modal .modal-dialog .modal-content .modal-body form  div label {
+ font-size: 1.5rem;
+}
+.modal .modal-dialog .modal-content .modal-body form  div,
+.modal .modal-dialog .modal-content .modal-body form  textarea,
+button[type="submit"] {
+ width: 100%;
+}
+.modal .modal-dialog .modal-content .modal-body form  div label {
+ border-radius: .25rem;
+ border-top-right-radius: 0;
+ border-bottom-right-radius: 0;
+ background: #000;
+ color: #fff;
+}
+
+.modal .modal-dialog .modal-content .modal-body form  div {
+ align-items: center !important;
+ display: flex;
+}
+
+.modal .modal-dialog .modal-content .modal-body form  div input {
+ background: #f2f2f2;
+ padding: .7rem;
+ border-top-left-radius: 0;
+ border-bottom-left-radius: 0;
+ margin-top: -.5rem;
+}

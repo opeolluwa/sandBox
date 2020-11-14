@@ -1,0 +1,21 @@
+//initialize
+function rot13(str) {
+ //make holder
+ let strArr = [];
+ //go over input
+
+ for (let cntCipher = 0; cntCipher < str.length; cntCipher++) {
+  //add each cipher to holder
+  strArr.unshift(str[cntCipher]);
+ }
+ //go over each holder element, translate cipher
+ for (let cntCipher = 0; cntCipher < strArr.length; cntCipher++) {
+  if ( strArr[cntCipher] != ' '){
+   let = strArr.charCodeAt(2)
+ }
+ 
+ }
+ console.log(strArr);
+}
+
+rot13("SERR PBQR PNZC");

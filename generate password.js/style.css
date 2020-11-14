@@ -1,0 +1,119 @@
+* {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+}
+
+/*body {
+   background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("pswd.jpeg");
+  }
+*/
+body{
+ background: #fff;
+}
+.container {
+ background: #212b40;
+ padding: .3rem;
+ margin: .2rem;
+ position: static;
+ bottom: 0;
+ max-width: 100%!important;
+}
+
+.container input,
+.container button {
+ padding: .5rem 0 .5rem .2rem;
+ border: none;
+ outline: none;
+ background: inherit;
+ color: #ffffff;
+}
+
+
+img {
+ max-width: 100%;
+ height: auto;
+ margin-top: 10%;
+}
+
+.container input {
+ width: 70%
+}
+
+.container button {
+ width: 27%;
+ border-left: #ffffff 2px inset;
+}
+
+.btn {
+ background: #fdca00;
+}
+
+@keyframes fade-out {
+ 0% {
+  opacity: 1;
+ }
+
+ 100% {
+  opacity: 0;
+ }
+}
+
+@keyframes fade-in {
+ 0% {
+  opacity: 0;
+ }
+
+ 100% {
+  opacity: 1;
+ }
+}
+
+
+@keyframes spin {
+ 0% {
+  transform: rotate(0deg);
+ }
+
+ 100% {
+  transform: rotate(360deg);
+ }
+}
+
+.loader {
+ border: none;
+ animation: none;
+ opacity: 0;
+ position: relative;
+ left: 35%;
+ top: 40%;
+ width: 7rem;
+ height: 7rem;
+ font-size: 1.2rem;
+ font-weight: 300;
+}
+
+.fade-in {
+ border-radius: 50%;
+ border: 1rem solid #e6faff;
+ border-top: .9rem solid #fdca00;
+ width: 7rem;
+ height: 7rem;
+ animation: fade-in, 2s linear .5s, spin 2s ease-out infinite .5s;
+ opacity: 1;
+}
+
+
+.fade-out {
+ max-height: 100%;
+ height: auto;
+ word-wrap: break-word;
+ padding: .2rem;
+ text-align: center;
+ font-size: 1.2rem;
+ font-weight: 300;
+ border: none!important;
+ border-radius: 0!important;
+ animation: none!important;
+ opacity: 1;
+}
