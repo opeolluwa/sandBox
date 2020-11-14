@@ -6,118 +6,6 @@
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" href="style.css">
  <title>generate whatsapp link</title>
- <style>
-  * {
-   padding: 0;
-   margin: 0;
-   box-sizing: border-box;
-   
-  }
-
-  body {
-   background:linear-gradient(rgbaα(0,0,0,.5), rgba(0,0,0,.5));
-  }
-
-  .container {
-   width: calc(100vw-40px);
-   height: calc(100vh-30px);
-   margin: 30px 20px 10px 10px;
-   padding: 10px;
-   background: rgba(0, 0, 0, .5);
-   border-radius: 12px;
-  }
-
-  .container input,
-  .container button {
-   outline: none;
-  }
-
-  .container .title {
-   display: flex;
-   align-items: center;
-   justify-content: space-evenly;
-  }
-
-  .container .title span {
-   width: 2px;
-   height: 3rem;
-   background: rgba(0, 0, 102, .5);
-
-   display: inline-block;
-   margin-right: 7px;
-  }
-
-  .container .input {
-   display: flex;
-   flex-direction: column;
-   margin: 1vh;
-   margin-bottom: 10vh;
-   margin-top: 5vh;
-   position: relative;
-
-  }
-
-  .container .input input,
-  .container .output-controls button {
-   height: 10vh;
-   border-radius: 5px;
-   padding: 3px;
-   margin-top: 12px;
-   border-color: rgba(0, 0, 102, .3);
-   border-style: solid;
-   border-width: 1px;
-   text-align: center;
-  }
-
-  .container .input input:first-child {
-   margin-top: 1px;
-  }
-
-  .container .output-controls button {
-   height: auto;
-   padding: .5rem;
-  }
-
-  .output-controls {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-  }
-
-  #output {
-   border-color: rgba(0, 0, 102, .3);
-   border-style: solid;
-   border-width: 1px;
-   width: 100%;
-   height: 18vh;
-   border-radius: 4px;
-   margin-top: 8px;
-   word-wrap: wrap;
-  }
-
-  h2,
-  h1 {
-   font-weight: 300;
-   font-family: cursive;
-  }
-
-  h1 {
-   font-family: sans-serif;
-  }
-
-  img {
-   width: 70px;
-  }
-
-  small {
-   color: rgba(0, 0, 0, .5);
-   display: block;
-   font-style: italic;
-   margin: .3rem;
-   position: relative;
- font-size: 80%;
-  }
- </style>
 </head>
 <div class="container">
  <div class="title">
@@ -131,7 +19,7 @@
   <input type="text" name="getText" id="getText" value="" placeholder="Type Message" maxlength="125" />
  </div>
  <h2>Output:</h2>
- <div name="" id=output></div>
+ <div name="" id=output readonly></div>
  <div class="output-controls">
   <button type="button">Reset Inputs</button>
   <button type="button">Generate</button>
@@ -139,68 +27,8 @@
  </div>
  <small>&copy; <a href="https://www.linkedin.com/in/adeoye-adefemi-opeoluwa-0669b41b5">Drizzle Systems</a></small>
 </div>
-<script>
- //ref variables 
- let link = document.getElementById('output');
- document.querySelectorAll('.container .output-controls button')[1].addEventListener('click', () => {
-  //define variables
-  let message = document.getElementById('getText').value;
-  let number = document.getElementById('getNumber').value;
-  //proceed to.copy
-
-  //ERROR HANDLING 
-  if (/\d/.test(number) === false) {
-   alert(`invalid number ${number}`);
-   number = '';
-  }
-  else if (number.length < 11) {
-   alert(`The number "${number}" has fewer characters than expected`);
-   number = '';
-  }
-  else {
-   number = number.replace(number[0], '234');
-
-   link.innerHTML = encodeURI('https:\/\/wa.me/' + number + '\?text=' + message);
-  }
- });
- //ref root node and selection button
- //let link
- let trigger = document.querySelectorAll('.container .output-controls button')[2];
-
- //add event listener 
- trigger.addEventListener('click', function() {
-  //append selection to variable link
-  const selection = window.getSelection();
-
-  //save current selection
-  const currentRange = selection.rangeCount === 0 ? null : selection.getRangeAt(0);
-
-  //select the link content
-  const range = document.createRange();
-  range.selectNodeContents(link);
-  selection.removeAllRanges();
-  selection.addRange(range);
-
-  //copy to clipboard
-  try {
-   document.execCommand('copy');
-   trigger.innerHTML = 'Copied to clipboard';
-  }
-  //unable to copy 
-  catch (err) {
-   trigger.innerHTML = 'copy';
-  }
-  //restore all previous all selection
-  selection.removeAllRanges();
-  currentRange && selection.addRange(currentRange);
- });
- document.querySelectorAll('.container .output-controls button')[0].addEventListener('click', () => {
-  //reset f8eilds
-  document.getElementById('getText').value = '';
-  document.getElementById('getNumber').value = '';
-  link.innerHTML = '';
-  document.querySelectorAll('.container .output-controls button')[2].innerHTML = 'Copy link';
- });
+<script src="sweetalert.min.js"></script>
+<script src="script.js">
 </script>
 
 <body>
