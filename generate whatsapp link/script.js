@@ -11,7 +11,7 @@
   if (!number) {
    swal({
     title: "Oops\!",
-    text: "number feed cannot be Empty, please provide a valid number",
+    text: "Number feed cannot be Empty, please provide a valid number",
     icon: "info",
 
    });
@@ -72,8 +72,9 @@
  //add event listener 
  trigger.addEventListener('click', function() {
   //append selection to variable link
-  if (document.getElementById('getText').value == '' || (
-    document.getElementById('getNumber').value == '' && document.getElementById('getText').value == '')) {
+  if ((
+    document.getElementById('getNumber').value == '' && document.getElementById('getText').value == '')     
+    ||document.getElementById('getNumber').value == '' ) {
    swal({
     title: 'Oops\!',
     text: 'Empty feeds, there\'s nothing to copy.',
