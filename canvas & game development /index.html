@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+    canvas {
+      width: 500px;
+      height: 500px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="whatever">
+    Your browers does not support canvas please upgrade
+  </canvas>
+  <script>
+    document.body.onload = function() {
+      //ref the canvas 
+      let canvas = document.getElementById("whatever");
+
+      //get context
+      let context = canvas.getContext("2d");
+
+      //FILLED RECTANGLES
+      // Draw a solid square with width and height of 100 pixels at (200,10)
+      context.fillRect(200, 10, 100, 100);
+      // Draw a solid square with width = 50 at 0,0
+      context.fillRect(0, 0, 50, 50);
+
+      // STROLE RECTANGLES
+      //Draw a rectangular outline with width and height of 50 pixels at (110, 10)
+      context.strokeRect(110, 10, 50, 50);
+
+      //CLEARING RECTANGLES
+      //this method clear out a rectangular dimension on a shape
+      //Clear a rectangle with width of 30 pixels and height of 20 pixels at (210, 20)
+      context.clearRect(210, 10, 50, 50);
+
+
+
+      //DRAW COMPLEX SHAPES
+      //draw a filled triangle
+      context.beginPath();
+      //start drawing at x = 10, y = 120
+      context.moveTo(10, 120);
+      //draw a line from the start to y= 180
+      context.lineTo(10, 180);
+      context.lineTo(110, 150);
+      // Close the shape and fill it out
+      context.fill();
+
+      //draw a sroked rectangle
+      context.beginPath();
+      context.moveTo(25, 60);
+      context.lineTo(25, 80);
+      context.lineTo(190, 10);
+      context.closePath();
+      context.stroke();
+
+      // Draw a more complex set of lines
+      context.beginPath();
+      context.moveTo(160, 160); // Start drawing at 160, 160
+      context.lineTo(170, 220);
+      context.lineTo(240, 210);
+      context.lineTo(260, 170);
+      context.lineTo(190, 140);
+      context.closePath();
+      context.stroke();
+
+
+      // DRAWING ARCS & CIRCLES
+      // Draw a semicircle
+      context.beginPath();
+      // Draw an arc at (400, 50) with radius 40 from 0 to 180 degrees, anticlockwise
+      // PI radians = 180 degrees
+      context.arc(70, 70, 40, 0, Math.PI, true);
+      context.fill();
+
+    }
+        document.body.onclick = ()=>{
+    //Create a new Audio object
+    var sound = new Audio();
+    // Select the source of the sound
+    sound.src = "music.mp3";
+    // This will only work on browsers that support OGG
+    // Play the sound
+    sound.play();
+    }
+  </script>
+</body>
+
+</html>

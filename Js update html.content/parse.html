@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title></title>
+ <style type="text/css" media="all">
+  #container {
+   transition: all 12s linear;
+  }
+
+  h3,
+  pre,
+  div {
+   margin: 0;
+  }
+
+  hr {
+   margin-top: 4rem;
+  }
+
+  h3 {
+   margin-top: 1rem;
+  }
+
+  #parent {
+   width: 15rem;
+   height: 15rem;
+   display: table-cell;
+  }
+
+  #parent div {
+   width: 5rem;
+   height: 5rem;
+   border: 1px solid #660066;
+   background: #f3f3f3;
+  }
+
+  .holder {
+   margin: 2px;
+   border: 1px solid rgba(0, 0, 0, .49);
+   width: 15rem;
+   height: 15rem;
+  }
+
+  #rel {
+   background: #660066;
+  }
+
+  #rel div {
+   width: 5rem;
+   height: 5rem;
+  }
+
+  #rel div:nth-child(2) {
+   position: relative;
+   width: 10rem;
+   top: -50%;
+   left: 11.5%;
+   background: #fdca00;
+  }
+
+
+  #rel div:nth-child(1) {
+   position: relative;
+   height: 10rem;
+   width: 10rem;
+   left: 25%;
+   background: #f3f3f3;
+
+  }
+ </style>
+</head>
+
+<body>
+ <h1>some heading</h1>
+ <button>Trigger</button>
+ <div id="container">
+  lorem ipsum The webpage at https://www.google.com/m?q=lorem+ipsum&client=ms-opera-mobile&channel=new&espv=1 might be temporarily down or it may have moved permanently to a new web address.
+ </div>
+ <script>
+  //ref & def variables 
+  let node = document.getElementById('container');
+  let update = fetch('g.txt')
+   .then(update => update.text())
+   .then(update => {
+    //parse the string
+    console.log(update)
+    /*
+      let parser = new DOMParser;
+      let parsedText = parser.parseFromString(update, 'text/html');*/
+    //update page
+    document.getElementsByTagName('button')[0].addEventListener('click', () => {
+     node.innerHTML = update;
+    });
+   });
+ </script>
+</body>
+
+</html>

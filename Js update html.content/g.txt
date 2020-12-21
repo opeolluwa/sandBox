@@ -1,0 +1,124 @@
+
+
+ <h3>Display : table-row</h3>
+ <pre>
+ <code>
+ --------html--------
+ 
+ &lt;div id="parent"&gt;
+ &lt;div id="child-X"&gt;
+ 
+ &lt;/div&gt;
+ &lt;div id="child-Y"&gt;
+ 
+ &lt;/div&gt;
+ &lt;div id="child-Y"&gt;
+ 
+ &lt;/div&gt;
+&lt;/div&gt;
+ 
+ 
+ 
+ --------css--------
+ #parent{
+ width: 15rem;
+ height: 15rem;
+ .
+ .
+ .
+ display: table-cell;
+ } 
+ 
+ 
+ --------output--------
+
+ </code>
+ </pre>
+ <div id="parent" class="holder" style="background: #660066">
+  <div id="child-X">
+  </div>
+  <div id="child-Y">
+  </div>
+  <div id="child-Y">
+  </div>
+ </div>
+ <!-- relative position-->
+ <hr>
+ <h3>Position : relative</h3>
+ <pre>
+ <code>
+ --------css-----------
+ #rel div {
+ width: 5rem;
+ height: 5rem;
+ background: #660066;
+ }
+
+
+#rel div:nth-child(2) {
+ position: relative;
+ width: 10rem;
+ top:-50%;
+ left: 11.5%;
+ background: #fdca00;
+ }
+ 
+ 
+ #rel div:nth-child(1) {
+ position: relative;
+ height: 10rem;
+ width: 10rem;
+ left:25%;
+ background: #660066;
+ }
+ 
+ 
+ 
+ -------html------
+ &lt;div id="rel"&gt;
+ &lt;div id="child-m"&gt;
+ &lt;/div&gt;
+ &lt;div id="child-n"&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ 
+ 
+ 
+ --------output--------
+ </code>
+ </pre>
+ <div id="rel" class="holder">
+  <div id="child-m">
+   child-m
+  </div>
+  <div id="child-n">
+   chid-n
+  </div>
+ </div>
+ <hr>
+ <h3>position absolute</h3>
+ <small><strong>absolute</strong>ly positioned element are placed relative to the closest <em>positioned</em> <strong>ancestor</strong> if none is found they are placed relative to the <strong>root</strong> element</small>
+ <pre>
+ <code>
+ --------html/css-----------
+ 
+ &lt;div 
+ style="position: relative;
+ background: #660066" 
+ class="holder"&gt;
+ 
+  &lt;div 
+ style="background: #fdca00; 
+ width: 8rem; height: 5rem; 
+ position: absolute;
+ bottom: 5rem"&gt;
+  &lt;/div&gt;
+ 
+ &lt;/div&gt;
+ </code>
+ </pre>
+ --------output-----------
+ <div style="position: relative;background: #660066" class="holder">
+  <div style="background: #fdca00; width: 8rem; height: 5rem; position: absolute;bottom: 5rem">
+  </div>
+ </div>

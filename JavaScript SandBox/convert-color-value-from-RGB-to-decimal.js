@@ -11,4 +11,4 @@ const getRGB = (string) => {
  }
 }
 
-console.log(getRGB("#ffffff"));
+console.log(getRGB("#fdca00"));
